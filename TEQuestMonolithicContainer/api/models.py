@@ -86,7 +86,8 @@ class CrosswordClue(models.Model):
     """Clues for a crossword puzzle."""
     crossword = models.ForeignKey(Crossword, on_delete=models.CASCADE, related_name='clues')
     number = models.PositiveIntegerField()
-    direction = models.CharField(max_length=5, choices=(('across','Across'),('down','Down')))
+    # Max length must accommodate the longest choice value ('across' -> 6)
+    direction = models.CharField(max_length=8, choices=(('across','Across'),('down','Down')))
     row = models.PositiveIntegerField()
     col = models.PositiveIntegerField()
     answer = models.CharField(max_length=64)
