@@ -1,5 +1,9 @@
 #!/usr/bin/env python
-"""Django's command-line utility for administrative tasks."""
+"""Django's command-line utility for administrative tasks.
+
+Ops note: To bind to the expected deployment port, start with:
+    python manage.py runserver 0.0.0.0:3000
+"""
 import os
 import sys
 

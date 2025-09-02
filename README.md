@@ -12,9 +12,11 @@ TEQuest Monolithic (Django backend, React front planned). This repository curren
 
 Quickstart:
 - Install Python deps (see TEQuestMonolithicContainer/requirements.txt)
+- Copy .env.example to .env and adjust values (inside TEQuestMonolithicContainer/)
 - Run migrations: python manage.py makemigrations && python manage.py migrate
 - Create superuser: python manage.py createsuperuser
-- Start server: python manage.py runserver
+- Start server (bind to port 3000 for deployment readiness):
+  python manage.py runserver 0.0.0.0:3000
 
 API highlights:
 - POST /api/auth/register
