@@ -1,0 +1,4 @@
+{
+    "command": "source venv/bin/activate && python manage.py migrate && python manage.py runserver <host>:<port>",
+    "working_directory": "/home/kavia/workspace/code-generation/tequest-tata-elxsi-enterprise-interactive-quiz-platform-228-270/TEQuestMonolithicContainer"
+}
