@@ -28,6 +28,9 @@ RUN pip install --no-cache-dir --upgrade pip && \
 # Copy project
 COPY . /app
 
+# Ensure entrypoint is executable
+RUN chmod +x /app/entrypoint.sh
+
 # Create non-root user for security
 RUN useradd -ms /bin/bash appuser && chown -R appuser:appuser /app
 USER appuser
