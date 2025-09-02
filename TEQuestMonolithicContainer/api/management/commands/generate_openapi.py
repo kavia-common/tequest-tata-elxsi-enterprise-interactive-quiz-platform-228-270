@@ -14,9 +14,9 @@ class Command(BaseCommand):
 
         schema_view = get_schema_view(
             openapi.Info(
-                title="My API",
+                title="TEQuest API",
                 default_version='v1',
-                description="Test description",
+                description="TEQuest backend APIs",
             ),
             public=True,
             permission_classes=(AllowAny,),

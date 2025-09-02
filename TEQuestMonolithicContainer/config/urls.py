@@ -28,9 +28,9 @@ urlpatterns = [
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="My API",
+      title="TEQuest API",
       default_version='v1',
-      description="Test description",
+      description="TEQuest backend APIs for authentication, quizzes, submissions, leaderboards, and admin operations.",
    ),
    public=True,
    permission_classes=(permissions.AllowAny,),
