@@ -14,9 +14,23 @@ Quickstart:
 - Install Python deps (see TEQuestMonolithicContainer/requirements.txt)
 - Copy .env.example to .env and adjust values (inside TEQuestMonolithicContainer/)
 - Run migrations: python manage.py makemigrations && python manage.py migrate
-- Create superuser: python manage.py createsuperuser
+- Create superuser (two options):
+  1) Interactive: python manage.py createsuperuser
+  2) Automatic from env vars (recommended for deploys): see "Automatic superuser creation" below
 - Start server (bind to port 3000 for deployment readiness):
   python manage.py runserver 0.0.0.0:3000
+
+Automatic superuser creation:
+- If the following environment variables are set in TEQuestMonolithicContainer/.env, a Django superuser will be created automatically at startup (during runserver/migrate/collectstatic) if not already present:
+  - ADMIN_USERNAME
+  - ADMIN_EMAIL
+  - ADMIN_PASSWORD
+- You can also trigger this explicitly at any time:
+  python manage.py ensure_superuser
+- This process is idempotent and will not recreate an existing user with the same username.
+
+Admin login:
+- Once created, you can log in to /admin using the configured credentials.
 
 API highlights:
 - POST /api/auth/register
