@@ -1,0 +1,7 @@
+#!/home/kavia/workspace/code-generation/tequest-tata-elxsi-enterprise-interactive-quiz-platform-228-270/.lint-venv/bin/python
+import sys
+from pycodestyle import _main
+if __name__ == '__main__':
+    if sys.argv[0].endswith('.exe'):
+        sys.argv[0] = sys.argv[0][:-4]
+    sys.exit(_main())
